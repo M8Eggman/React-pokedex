@@ -128,7 +128,7 @@
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 300ms ease;
 }
 .loadMore:hover {
   background-color: #1c91c7;
