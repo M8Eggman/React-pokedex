@@ -7,15 +7,14 @@
   font-weight: bolder;
 }
 .details {
-  background: #fff;
   border-radius: 12px;
-  margin: 30px auto;
   max-width: 900px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   padding: 32px 32px 24px 32px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  background-color: white;
 }
 .detailsHeader {
   display: flex;
@@ -164,8 +163,23 @@
   margin: 18px auto 0 auto;
   display: block;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.3s;
 }
 .moreBtn:hover {
   background: #e04848;
 }
+/* chat gpt psk flm de faire glitch  */
+@keyframes glitch {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(90deg);
+  }
+}
+.type.glitch {
+  background: repeating-linear-gradient(90deg, #b0b, #fff 10px, #b0b 20px);
+  color: white;
+  animation: glitch 1s infinite alternate;
+}
+

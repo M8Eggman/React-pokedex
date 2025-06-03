@@ -19,9 +19,82 @@ export default function Details({ pokemons }) {
   }, [pokemons, id]);
 
   return !pokemons ? (
-    <div className="chargementDetails"><p>Chargement...</p></div>
+    <div className="chargementDetails">
+      <p>Chargement...</p>
+    </div>
   ) : !pokemon ? (
-    <div className="chargementDetails"><p>Pokémon introuvable</p></div>
+    <div className="details missingnoBg">
+      <div className="detailsHeader">
+        <div className="detailsBtn" style={{ opacity: 0.5, pointerEvents: "none" }}>
+          N° 0000 ????
+        </div>
+        <div className="detailsTitle">
+          <h1>
+            MissingNo <span>N° 0000</span>
+          </h1>
+        </div>
+        <div className="detailsBtn" style={{ opacity: 0.5, pointerEvents: "none" }}>
+          N° 0000 ????
+        </div>
+      </div>
+      <div className="detailsMain">
+        <div className="detailsImg">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/MissingNo.svg/langfr-150px-MissingNo.svg.png"
+            alt=""
+            style={{ filter: "contrast(200%) grayscale(100%)" }}
+          />
+        </div>
+        <div className="detailsInfo">
+          <div className="detailsInfoTypes">
+            <span>Type</span>
+            <span className="type typeDetails normal">???</span>
+          </div>
+          <div className="detailsInfoTypes">
+            <span>Faiblesse</span>
+            <span className="type typeDetails glitch">???</span>
+          </div>
+          <div className="detailsInfoTypes">
+            <span>Résistance</span>
+            <span className="type typeDetails glitch">???</span>
+          </div>
+          <div className="detailsInfoTypes">
+            <span>Immunité</span>
+            <span className="type typeDetails glitch">???</span>
+          </div>
+          <div className="detailsStats">
+            <h3>Stats de base</h3>
+            <div className="statBars">
+              {[
+                ["HP", "???"],
+                ["Attack", "999"],
+                ["Defense", "NaN"],
+                ["Special Attack", "404"],
+                ["Special Defense", "???"],
+                ["Speed", "∞"],
+              ].map((stat) => (
+                <div key={stat[0]} className="statBar">
+                  <p>{stat[0]}</p>
+                  <div className="barBg">
+                    <div
+                      className="barFill"
+                      style={{
+                        width: `${Math.random() * 180 + 20}px`,
+                        background: "#b0b",
+                        filter: "blur(1px)",
+                      }}></div>
+                  </div>
+                  <p>{stat[1]}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <button className="moreBtn" onClick={() => navigate("/")}>
+        Revenir dans des lieux plus sûrs
+      </button>
+    </div>
   ) : (
     <div className="details">
       <div className="detailsHeader">
