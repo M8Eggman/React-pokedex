@@ -19,9 +19,9 @@ export default function Details({ pokemons }) {
   }, [pokemons, id]);
 
   return !pokemons ? (
-    <div>Chargement...</div>
+    <div className="chargementDetails"><p>Chargement...</p></div>
   ) : !pokemon ? (
-    <div>Pokémon introuvable</div>
+    <div className="chargementDetails"><p>Pokémon introuvable</p></div>
   ) : (
     <div className="details">
       <div className="detailsHeader">

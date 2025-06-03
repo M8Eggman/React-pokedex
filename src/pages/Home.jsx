@@ -106,10 +106,14 @@ export default function Home({ pokemons }) {
               </div>
             ))
           ) : (
-            <p>Aucun résultat trouvé.</p>
+            <div className="chargementHome">
+              <p>Aucun résultat trouvé</p>
+            </div>
           )
         ) : (
-          <p>Chargement ...</p>
+          <div className="chargementHome">
+            <p>Chargement...</p>
+          </div>
         )}
       </div>
       {!searchResults && (
